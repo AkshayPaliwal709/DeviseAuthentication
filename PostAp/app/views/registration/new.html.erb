@@ -1,0 +1,45 @@
+<body class="wrapper" >
+<h2>Sign up</h2>
+
+<%= form_tag(member_registration_path,:method => 'post') %>
+<%= devise_error_messages! %>
+  <table class="table">
+  
+      <tr class="row  ">
+      <td class="cell">Username : </td>
+      <td class="cell"><%=text_field_tag "member[username]",@member.username %></td>
+      </tr>
+
+      <tr class="row  ">
+      <td class="cell">Email : </td>
+      <td class="cell"><%=email_field_tag "member[email]",@member.email %></td>
+      </tr>
+
+      <tr class="row  ">
+      <td class="cell">Password : </td>
+      <td class="cell"><%=password_field_tag "member[password]",@member.password %></td>
+      </tr>
+
+      <tr class="row  ">
+      <td class="cell">Retype password : </td>
+      <td class="cell"><%=password_field_tag "member[password_confirmation]",@member.password_confirmation %></td>
+      </tr>
+
+      <tr class="row  ">
+      <td class="cell">Mobile : </td>
+      <td class="cell"><%=text_field_tag "contact[mobile]" ,@contact.mobile %></td>
+      </tr>
+
+      <tr class="row  ">
+      <td class="cell">Address : </td>
+      <td class="cell"><%=text_area_tag "contact[address]" ,@contact.address ,:rows => 10, :cols => 25 %></td>
+      </tr>
+
+      <tr class="row  ">
+      <td class="cell"><%= submit_tag nil, :class => "form_submit" %></td>
+    </tr>
+  </table>
+
+<%= render :partial => "devise/shared/links" %>
+
+</body>

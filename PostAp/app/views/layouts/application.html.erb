@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Community</title>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= render :partial=>"/layouts/header" %>
+	
+	<div class="SHELL">
+		<%= render :partial=>"/layouts/notice" %>
+		<div class="CL"></div>
+		<%= yield %>
+		<div class="CL"></div>
+	</div>
+	
+	<%= render :partial=>"/layouts/footer" %>
+
+
+</body>
+</html>
